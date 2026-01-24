@@ -54,16 +54,18 @@
     $('#contact-form').on('submit', function(event) {
         event.preventDefault();
 
-        const btn = $('#submit');
+        const btn = $('#contact-btn');
         const originalText = btn.text();
         
-        // 1. Set the current time for the {{time}} variable
-        const now = new Date();
-        const formattedTime = now.toLocaleString('en-US', { 
-            dateStyle: 'medium', 
-            timeStyle: 'short' 
-        });
-        $('#time').val(formattedTime);
+        // 1. Prepare the data
+        const subject = $('#subject').val();
+        const body = $('#message_body').val();
+        
+        // 2. Combine Subject and Body into the {{message}} tag
+        const fullMessage = `Subject: ${subject}\n\n${body}`;
+        
+        $('#contact_message').val(fullMessage);
+        $('#contact_time').val(new Date().toLocaleString());
 
         // 2. Change button UI
         btn.text('Sending...');
@@ -89,21 +91,20 @@
     $('#quote-form').on('submit', function(event) {
         event.preventDefault();
 
-        const btn = $('#app-btn');
-        const originalText = btn.text();
+        const btn = $('#button');
+        btn.value = 'Sending...';
 
-        // 1. Capture individual values
-        const mobile = $('#mobile').val();
-        const service = $('#service').find(":selected").text();
-        const note = $('#note').val();
+        // 1. Get values from the extra fields
+        const mobile = document.getElementById('mobile').value;
+        const service = document.getElementById('service').value;
+        const note = document.getElementById('note').value;
 
-        // 2. Combine them into the single {{message}} variable
-        const fullMessage = `Service: ${service}\nMobile: ${mobile}\n\nNote: ${note}`;
-        $('#combined_message').val(fullMessage);
+        // 2. Format them into one string for the {{message}} variable
+        const formattedMessage = `Service: ${service}\nMobile: ${mobile}\nNote: ${note}`;
 
-        // 3. Set the {{time}} variable
-        const now = new Date();
-        $('#appointment_time').val(now.toLocaleString());
+        // 3. Inject that string and the current time into the hidden inputs
+        document.getElementById('combined_message').value = formattedMessage;
+        document.getElementById('appointment_time').value = new Date().toLocaleString();
 
         // 4. UI Feedback
         btn.text('Sending...');
