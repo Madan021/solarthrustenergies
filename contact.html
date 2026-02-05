@@ -5,11 +5,11 @@
     <meta charset="utf-8">
     <title>Solar Thrust Energies</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <meta content="" name="keywords">
-    <meta content="" name="description">
+    <meta content="Solar panels Chennai, SolarEdge Tamil Nadu, Residential Solar Energy Chennai, Solar Thrust Energies" name="keywords">
+    <meta content="Providing premium residential solar solutions in Chennai and across Tamil Nadu using SolarEdge technology." name="description">
 
     <!-- Favicon -->
-    <link href="img/favicon.ico" rel="icon">
+        <link href="img/favicon.png" rel="icon">
 
     <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -74,7 +74,8 @@
     <!-- Navbar Start -->
     <nav class="navbar navbar-expand-lg bg-white navbar-light sticky-top p-0">
         <a href="index.html" class="navbar-brand d-flex align-items-center border-end px-4 px-lg-5">
-            <h2 class="m-0 text-primary">Solartec</h2>
+            <img src="img/Logo.png" alt="Solar Thrust Energies Logo" style="height: 45px;" class="me-3">
+            <h2 class="m-0 text-primary">Solar Thrust Energies</h2>
         </a>
         <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
             <span class="navbar-toggler-icon"></span>
@@ -117,17 +118,19 @@
                     <div class="p-lg-5 ps-lg-0">
                         <h6 class="text-primary">Contact Us</h6>
                         <h1 class="mb-4">Feel Free To Contact Us</h1>
-                        <form>
+                        <form id="contact-form">
+                           <input type="hidden" name="time" id="contact_time">
+                            <input type="hidden" name="message" id="contact_message">
                             <div class="row g-3">
                                 <div class="col-md-6">
                                     <div class="form-floating">
-                                        <input type="text" class="form-control" id="name" placeholder="Your Name">
+                                        <input type="text" name="name" class="form-control" id="name" placeholder="Your Name">
                                         <label for="name">Your Name</label>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-floating">
-                                        <input type="email" class="form-control" id="email" placeholder="Your Email">
+                                        <input type="email" name="email" class="form-control" id="email" placeholder="Your Email">
                                         <label for="email">Your Email</label>
                                     </div>
                                 </div>
@@ -139,12 +142,12 @@
                                 </div>
                                 <div class="col-12">
                                     <div class="form-floating">
-                                        <textarea class="form-control" placeholder="Leave a message here" id="message" style="height: 100px"></textarea>
-                                        <label for="message">Message</label>
+                                        <textarea class="form-control" placeholder="Leave a message here" id="message_body" style="height: 100px" required></textarea>
+                                        <label for="message_body">Message</label>
                                     </div>
                                 </div>
                                 <div class="col-12">
-                                    <button class="btn btn-primary rounded-pill py-3 px-5" type="submit">Send Message</button>
+                                    <button class="btn btn-primary rounded-pill py-3 px-5" type="submit" id="contact-btn">Send Message</button>
                                 </div>
                             </div>
                         </form>

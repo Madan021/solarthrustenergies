@@ -83,6 +83,11 @@
     transition: .5s;
 }
 
+.navbar.sticky-top img {
+    max-height: 45px;
+    transition: .5s;
+}
+
 .navbar .navbar-brand,
 .navbar a.btn {
     height: 75px;
